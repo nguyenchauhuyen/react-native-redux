@@ -38,6 +38,7 @@ class RepoList extends Component {
                 styles={styles.container}
                 data={repos}
                 renderItem={this.renderItem}
+                keyExtractor={(item) => item.id.toString()}
             />
         );
     }
@@ -55,9 +56,8 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => {
-    let storedRepositories = state.repos.repos && state.repos.repos.length ? state.repos.repos.map(repo => ({ key: repo.id, ...repo })) : [];
     return {
-        repos: storedRepositories,
+        repos: state.repos.repos,
         ajaxStatus: state.ajaxStatus
     };
 };
