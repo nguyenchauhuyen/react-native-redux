@@ -9,11 +9,12 @@ import {
 import { connect } from 'react-redux';
 import { fetchRepoList } from '../redux/actions/repositoryActions';
 import Loading from '../components/Loading';
+import { globalStyles } from '../styles/global';
 
 class RepoList extends Component {
-    static navigationOptions = {
-        title: 'Repositories'
-    };
+    // static navigationOptions = {
+    //     title: 'Repositories'
+    // };
 
     componentDidMount() {
         this.props.fetchRepoList('nguyenchauhuyen');
@@ -23,7 +24,7 @@ class RepoList extends Component {
         <TouchableOpacity
             style={styles.item}
             onPress={() =>
-                this.props.navigation.navigate('Detail', { name: item.name })
+                this.props.navigation.navigate('RepoDetails', { name: item.name })
             }
         >
             <Text>{item.name}</Text>
@@ -31,15 +32,17 @@ class RepoList extends Component {
     );
     render() {
         const { repos, ajaxStatus } = this.props;
-        if (ajaxStatus.isLoading) return <Loading/>;
+        if (ajaxStatus.isLoading) return <Loading />;
 
         return (
-            <FlatList
-                styles={styles.container}
-                data={repos}
-                renderItem={this.renderItem}
-                keyExtractor={(item) => item.id.toString()}
-            />
+            <View style={globalStyles.container}>
+                <FlatList
+                    styles={styles.container}
+                    data={repos}
+                    renderItem={this.renderItem}
+                    keyExtractor={(item) => item.id.toString()}
+                />
+            </View>
         );
     }
 }

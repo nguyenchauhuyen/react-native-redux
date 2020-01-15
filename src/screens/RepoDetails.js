@@ -3,6 +3,11 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { getRepoDetail } from '../redux/actions/repositoryActions';
 import Loading from '../components/Loading';
+import { globalStyles } from '../styles/global';
+// import Icon from 'react-native-vector-icons/FontAwesome';
+// import { Icon } from '../libs/images';
+// import Icon from 'react-native-vector-icons/Ionicons';
+
 
 class RepoDetail extends Component {
     static navigationOptions = {
@@ -26,12 +31,13 @@ class RepoDetail extends Component {
         } = repoInfo;
 
         return (
-            <View>
+            <View style={globalStyles.container}>
                 <Text>{name}</Text>
                 <Text>{full_name}</Text>
                 <Text>{description}</Text>
                 <Text>Forks: {forks_count}</Text>
                 <Text>Stars: {stargazers_count}</Text>
+                {/* <Icon name="menu" size={16} color="green" /> */}
             </View>
         );
     }

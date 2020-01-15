@@ -194,7 +194,6 @@
 				71C08B7815DA459521748093 /* Pods-react_native_appTests.debug.xcconfig */,
 				9F5573205546A264F4EC6472 /* Pods-react_native_appTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -308,6 +307,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

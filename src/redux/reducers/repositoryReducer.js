@@ -1,6 +1,6 @@
 export const REPO_FETCH_DETAILS = 'app/repos/fetchRepoDetails';
 export const REPO_FETCH_LIST = 'app/repos/fetchRepoList';
-
+export const REPO_FETCH_USER = 'app/repos/fetchRepoUSER';
 
 const initialState = {
     repos: [],
@@ -21,6 +21,12 @@ export default function reducer(state = initialState, action = {}) {
                 ...state,
                 repos: action.payload
             };
+        }
+        case REPO_FETCH_USER: {
+            return {
+                ...state,
+                user: action.payload
+            }
         }
         default:
             return state;
