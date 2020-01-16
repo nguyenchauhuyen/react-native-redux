@@ -4,10 +4,6 @@ import { connect } from 'react-redux';
 import { getRepoDetail } from '../redux/actions/repositoryActions';
 import Loading from '../components/Loading';
 import { globalStyles } from '../styles/global';
-// import Icon from 'react-native-vector-icons/FontAwesome';
-// import { Icon } from '../libs/images';
-// import Icon from 'react-native-vector-icons/Ionicons';
-
 
 class RepoDetail extends Component {
     static navigationOptions = {

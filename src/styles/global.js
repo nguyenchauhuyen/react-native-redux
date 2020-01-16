@@ -29,6 +29,12 @@ export const globalStyles = StyleSheet.create({
         marginTop: 6,
         textAlign: 'center',
     },
+    item: {
+        padding: 16,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ccc'
+    }
+
 });
 
 // export const images = {
