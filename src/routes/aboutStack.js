@@ -1,16 +1,16 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import React from 'react';
-// import Header from '../shared/header';
+import Header from '../components/Header';
 import Profile from '../screens/Profile';
 
 const screens = {
   Profile: {
     screen: Profile,
-    // navigationOptions: ({ navigation }) => {
-    //   return {
-    //     headerTitle: () => <Header title='GameZone' navigation={navigation} />
-    //   }
-    // },
+    navigationOptions: ({ navigation }) => {
+      return {
+        header: () => <Header title='My Profile' navigation={navigation} />
+      }
+    },
   },
 }
 
